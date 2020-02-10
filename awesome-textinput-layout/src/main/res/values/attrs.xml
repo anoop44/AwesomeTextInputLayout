@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AwesomeTextInputLayout">
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="animatedTextSize" format="dimension" />
+        <attr name="animationDuration" format="integer" />
+    </declare-styleable>
+</resources>
