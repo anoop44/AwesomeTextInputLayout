@@ -2,7 +2,7 @@
 
 An EditText decorator inspired by the EditText fields in Add New Contact screen of Google's Contact App
 
-### style1
+### Demo
 ![gif of AwesomeTextInputLayout](https://raw.githubusercontent.com/anoop44/AwesomeTextInputLayout/master/art/awesome-textinput-layout-demo.gif)
 
 
