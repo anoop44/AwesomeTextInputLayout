@@ -260,7 +260,9 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
             collapsedTextSize = getDimension(
                 R.styleable.AwesomeTextInputLayout_animatedTextSize,
                 paint.textSize
-            )
+            ).also {
+                paint.textSize = it
+            }
             cornerRadius = getDimension(
                 R.styleable.AwesomeTextInputLayout_cornerRadius,
                 cornerRadius

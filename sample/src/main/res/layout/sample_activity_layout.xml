@@ -12,7 +12,8 @@
         app:borderColor="#5300e8"
         app:borderWidth="2dp"
         app:cornerRadius="8dp"
-        android:padding="16dp">
+        android:padding="16dp"
+        app:animatedTextSize="16dp">
 
         <EditText
             android:layout_width="match_parent"
