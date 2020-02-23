@@ -55,6 +55,7 @@ Table below describes the properties available to customize the AwesomeNavigatio
 | cornerRadius           | dimension | defines corner radius of border |
 | padding                | dimension | use padding to adjust the space between border and EditText |
 | animationDuration      | integer   | defines the time for the hint animation |
+| animatedTextSize       | dimension | defines the text size of hint when edit text is in focus  |
 
 ## Find this library useful? :heart:
 Support it by joining __[stargazers](https://github.com/anoop44/AwesomeTextInputLayout/stargazers)__ for this repository. :star:
