@@ -45,7 +45,7 @@ AwesomeTextInputLayout is added a the immediate parent of the `EditText` you wan
 ```
 ### Customization
 
-Table below describes the properties available to customize the AwesomeNavigation. Some options are applicable to only certain styles
+Table below describes the properties available to customize the AwesomeTextInputLayout. Some options are applicable to only certain styles
 
 
 | Property Name          | Format    | Description |
