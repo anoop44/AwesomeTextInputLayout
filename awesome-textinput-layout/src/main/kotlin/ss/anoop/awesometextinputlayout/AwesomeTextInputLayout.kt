@@ -211,7 +211,9 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
                 width.minus(
                     strokeHalf
                 ),
-                cornerRadius
+                    strokeHalf.plus(
+                            collapsedTextHeight.div(2)
+                    ).plus(cornerRadius)
             )
 
             quadTo(
