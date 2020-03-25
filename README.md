@@ -1,4 +1,4 @@
-# AwesomeTextInputLayout [ ![Download](https://api.bintray.com/packages/anoop44/maven/awesome-textinput-layout/images/download.svg?version=1.0.1) ](https://bintray.com/anoop44/maven/awesome-textinput-layout/1.0.1/link) <a href="https://android-arsenal.com/api?level=16"><img alt="API" src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat"/></a>
+# AwesomeTextInputLayout [ ![Download](https://api.bintray.com/packages/anoop44/maven/awesome-textinput-layout/images/download.svg?version=1.0.3) ](https://bintray.com/anoop44/maven/awesome-textinput-layout/1.0.3/link) <a href="https://android-arsenal.com/api?level=16"><img alt="API" src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat"/></a>
 
 An EditText decorator inspired by the EditText fields in Add New Contact screen of Google's Contact App. EditText is surrounded by a rounded rectangle border. Whenever the edit text receives focus and is empty, Hint is travelled to the top and be part of the border. When it loses focus and still is empty Hint travels back to the original position
 
