@@ -39,9 +39,9 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
     private var collapsedTextWidth = 0f
 
     private var collapsedTextSize = TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_SP,
-            10f,
-            context.resources.displayMetrics
+        TypedValue.COMPLEX_UNIT_SP,
+        10f,
+        context.resources.displayMetrics
     )
 
     private var animationDuration = 300
@@ -58,6 +58,8 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
 
     private var hintBaseLine = 0f
 
+    private var hideHintText = true
+
     private val paint = Paint(ANTI_ALIAS_FLAG).apply {
         color = Color.RED
         style = Paint.Style.STROKE
@@ -72,7 +74,6 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
         attributeSet?.let(::initAttrs)
     }
 
-
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
         editText?.let {
@@ -85,8 +86,15 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
                     )
                 )
             }
-            if(changed) {
-                updateBorderPath(-spacing)
+            if (changed) {
+                hideHintText = if (editText?.hasFocus() == false) {
+                    updateBorderPath(-spacing)
+                    true
+                } else {
+                    hint = editText?.hint.toString()
+                    editText?.hint = ""
+                    true
+                }
             }
         }
     }
@@ -96,12 +104,14 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
         paint.style = Paint.Style.STROKE
         canvas.drawPath(path, paint)
         paint.style = Paint.Style.FILL
-        canvas.drawText(
-            hint,
-            expandedHintPoint.x,
-            hintBaseLine,
-            paint
-        )
+        if (!hideHintText) {
+            canvas.drawText(
+                hint,
+                expandedHintPoint.x,
+                hintBaseLine,
+                paint
+            )
+        }
     }
 
     override fun addView(child: View, index: Int, params: ViewGroup.LayoutParams) {
@@ -211,9 +221,9 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
                 width.minus(
                     strokeHalf
                 ),
-                    strokeHalf.plus(
-                            collapsedTextHeight.div(2)
-                    ).plus(cornerRadius)
+                strokeHalf.plus(
+                    collapsedTextHeight.div(2)
+                ).plus(cornerRadius)
             )
 
             quadTo(
@@ -233,7 +243,7 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
 
             lineTo(
                 expandedHintPoint.x.plus(
-                        textWidth
+                    textWidth
                 ),
                 strokeHalf.plus(
                     collapsedTextHeight.div(2)
@@ -281,13 +291,13 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
         hasFocus: Boolean
     ) {
 
-        if(editText.editableText.isNotBlank()){
+        if (editText.editableText.isNotBlank()) {
             return
         }
 
         animator = if (hasFocus) {
-            hint = editText.hint.toString()
             editText.hint = ""
+            hideHintText = false
             getHintAnimator(
                 editText.textSize,
                 collapsedTextSize,
@@ -308,7 +318,7 @@ class AwesomeTextInputLayout @JvmOverloads constructor(
                 addListener(object : DefaultAnimatorListener() {
                     override fun onAnimationEnd(animation: Animator?) {
                         editText.hint = hint
-                        hint = ""
+                        hideHintText = true
                     }
                 })
             }
