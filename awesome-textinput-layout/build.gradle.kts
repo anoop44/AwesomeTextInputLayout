@@ -10,8 +10,8 @@ android {
     compileSdkVersion(29)
     defaultConfig {
         minSdkVersion(14)
-        versionName = "1.0.1"
-        versionCode = 1001
+        versionName = "1.0.3"
+        versionCode = 1003
     }
 
     sourceSets["main"].java.srcDirs(
@@ -28,7 +28,7 @@ configure<PublishExtension> {
     userOrg = "anoop44"
     groupId = "ss.anoop"
     artifactId = "awesome-textinput-layout"
-    publishVersion = "1.0.2"
+    publishVersion = "1.0.3"
     desc = "An EditText decorator inspired by the EditText fields in Add New Contact screen of Google's Contact App"
     website = "https://github.com/anoop44/AwesomeTextInputLayout"
 }
